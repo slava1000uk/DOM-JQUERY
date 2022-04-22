@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Перемещение по клику</title>
+</head>
+
+<body>
+  <h1 id="heading">Привет, мир!</h1>
+  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  <script>
+         //Событие click, здесь просто другая запись: здесь непосредственно передаю функцию как аргумент, 
+         //до этого я сначала создал - объявил функцию, а потом передал ее название как аргумент
+         //суть записи в том что по сути когда объявляется функция то создается неявная переменная,
+         //в которой эта функция сохраняется
+         $("html").click (function(event) {
+           $("#heading").offset({
+                                 left: event.pageX,
+                                 top: event.pageY
+                                });
+         });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Изучаю DOM</title>
+  </head>
+  <body>
+    <h1 id="main-heading">Привет, мир!</h1>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+      $("#main-heading").text("Мои друзья: ");
+
+      var friendsArray = ["Саша", "Коля", "Вах", "Шурик", "Еще один Саша", "Денис"];
+      for (var i = 0; i < friendsArray.length; i++) {
+        $("body").append("<p>" + friendsArray[i] + "</p>");
+      }
+    
+      $("p").fadeOut(9000);
+      $("p").append(" - лучший!");
+      $("p").fadeIn(9000);
+    </script>
+  </body>
+</html>

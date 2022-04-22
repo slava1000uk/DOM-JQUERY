@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Интерактивное программирование</title>
+</head>
+
+<body>
+  <h1 id="heading">Привет, мир!</h1>
+  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  <script>
+         //Анимация элементов с помощью setInterval
+         //движение заголовка по квадрату
+          var leftOffset = 0;
+          var topOffset = 0;
+          var moveHeading= function () {
+
+           if(leftOffset < 200 && topOffset === 0) {
+             $("#heading").offset({ left: leftOffset, top: topOffset });
+             leftOffset++;
+            } else {
+              if (leftOffset === 200 && topOffset < 200) {
+                $("#heading").offset({ left: leftOffset, top: topOffset });
+                topOffset++;
+              } else {
+                if (leftOffset > 0 && topOffset === 200) {
+                  $("#heading").offset({ left: leftOffset, top: topOffset });
+                  leftOffset--;
+                } else {
+                  if (leftOffset === 0 && topOffset > 0) {
+                    $("#heading").offset({ left: leftOffset, top: topOffset });
+                    topOffset--;
+                }
+              }
+            }
+          }
+
+          
+          };
+
+          var intervalId = setInterval(moveHeading, 30);
+          
+          //остановка движеня по клику на движущийся текст
+          $("h1").click (function (event) {
+            clearInterval(intervalId);
+          });
+  </script>
+</body>
+
+</html>

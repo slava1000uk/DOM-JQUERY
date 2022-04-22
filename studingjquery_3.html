@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Изучаю DOM</title>
+  </head>
+  <body>
+    <h1 id="main-heading">Мигающий заголовок!</h1>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+      for (var i = 1; i <= 5; i++) {
+        //с каждым новым мганием скорость исчезновения и появления увеличивается
+        var time = i * 1000;
+        $("h1").fadeOut(time);
+        $("h1").fadeIn(time);
+      }
+    </script>
+  </body>
+</html>
